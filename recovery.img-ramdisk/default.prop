@@ -19,29 +19,46 @@ ro.build.type=eng
 ro.build.user=agrabren
 ro.build.host=dogbert
 ro.build.tags=debug,test-keys
-ro.product.model=thor
+ro.product.model=SHIELD
 ro.product.brand=nvidia
 ro.product.name=cm_thor
-ro.product.device=thor
-ro.product.board=thor
+ro.product.device=roth
+ro.product.board=P2450
 ro.product.cpu.abi=armeabi-v7a
 ro.product.cpu.abi2=armeabi
-ro.product.manufacturer=nvidia
+ro.product.manufacturer=NVIDIA
 ro.product.locale.language=en
 ro.product.locale.region=US
 ro.wifi.channels=
 ro.board.platform=tegra
 # ro.build.product is obsolete; use ro.product.device
-ro.build.product=thor
+ro.build.product=roth
 # Do not try to parse ro.build.description or .fingerprint
 ro.build.description=cm_thor-eng 4.2.2 JDQ39E eng.agrabren.20130802.174216 debug,test-keys
 ro.build.fingerprint=nvidia/cm_thor/thor:4.2.2/JDQ39E/eng.agrabren.20130802.174216:eng/debug,test-keys
 ro.build.characteristics=default
 ro.cm.device=thor
 # end build properties
-#
-# system.prop for thor
-#
+ro.opengles.version = 131072
+wifi.interface=wlan0
+ap.interface=wlan0
+rild.libpath=/system/lib/libril-icera.so
+rild.libargs=-e rmnet0
+persist.tegra.nvmmlite = 1
+persist.wlan.ti.calibrated = 0
+ro.ril.wake_lock_timeout=200000
+ro.sf.override_null_lcd_density = 1
+persist.tegra.panel.rotation = 90
+
+#NFC
+debug.nfc.fw_download=false
+debug.nfc.se=false
+
+#support dynamic resolution change property
+ro.streaming.video.drs=true
+
+# disable EGL_BUFFER_PRESERVED extension for OpenGLRenderer
+debug.hwui.render_dirty_regions=false
 
 #
 # ADDITIONAL_BUILD_PROPERTIES
@@ -61,9 +78,23 @@ ro.config.ringtone=Orion.ogg
 ro.config.notification_sound=Argon.ogg
 ro.config.alarm_alert=Hassium.ogg
 ro.carrier=unknown
-ro.ril.hsxpa=1
-ro.ril.gprsclass=10
-ro.adb.qemud=1
-ro.kernel.android.checkjni=1
+ro.config.notification_sound=OnTheHunt.ogg
+ro.config.alarm_alert=Alarm_Classic.ogg
+ro.setupwizard.mode=OPTIONAL
+ro.com.google.gmsversion=4.2_r2
+ro.com.google.clientidbase=android-nvidia
+drm.service.enabled=true
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=96m
+dalvik.vm.heapsize=256m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=8m
+persist.nvidia.power_off_delay=5000
+ro.sf.lcd_density=320
+ro.roth.allow_clings=false
+dalvik.vm.dexopt-flags=m=y
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
+tf.enable=y
+
